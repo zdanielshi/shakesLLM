@@ -23,8 +23,8 @@ def generate_shakespeare_text(model, tokenizer, prompt):
 
     output = model.generate(
         input_ids, 
-        max_length=50, 
-        num_return_sequences=10,  # Generates N sequences
+        max_length=100, 
+        num_return_sequences=3,  # Generates N sequences
         do_sample=True, 
         top_k=50
     )
