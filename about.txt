@@ -1,0 +1,18 @@
+### *Why*
+
+Instead of becoming overreliant on pre-trained AI's from OpenAI, I wanted to know what it *feels* like to train up a large language transformer model.
+
+I thought that if I had a very basic grasp of what that was like, I could better understand why transformer LLM AI's do what they do.
+
+Thanks to this [tutorial](https://www.youtube.com/watch?v=kCc8FmEb1nY) from Andrej Karpathy, and a *lot* of help from ChatGPT.
+
+This app takes advantage of the following:
+- A transformer model
+- Trained on the [TinyShakespeare dataset](https://www.tensorflow.org/datasets/catalog/tiny_shakespeare)
+- Interface based on Streamlit
+- This is a [small model](https://colab.research.google.com/drive/19d5fGwJ42HpILfZ04mv9Y3VAQ-ig41ee?usp=sharing) I trained myself (following the tutorial from Karpathy and ChatGPT).
+
+Enter a few words into the text box on the right, and it will start to generate a sequence of text that 🤞should🤞 read like Shakespeare. This being a small model, it will not read as legibly as LLMs published after 2023.
+
+[Roadmap](https://southquad.notion.site/Shakespeare-LLM-roadmap-6d87756b5a4a49e3bc277d08883f7843?pvs=4)
+[South Quad LLC](https://southquad.com)
