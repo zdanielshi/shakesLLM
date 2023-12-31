@@ -3,6 +3,19 @@ import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 import re
 
+# Cached function to load the model
+@st.cache_resource
+def load_model(model_path):
+    model = GPT2LMHeadModel.from_pretrained(model_path)
+    return model
+
+# Cached function to load the tokenizer
+@st.cache_resource
+def load_tokenizer(model_path):
+    tokenizer = GPT2Tokenizer.from_pretrained(model_path)
+    return tokenizer
+
+
 def generate_shakespeare_text(model, tokenizer, prompt):
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
     device = model.device
@@ -10,8 +23,8 @@ def generate_shakespeare_text(model, tokenizer, prompt):
 
     output = model.generate(
         input_ids, 
-        max_length=50, 
-        num_return_sequences=10,  # Generates 3 sequences
+        max_length=100, 
+        num_return_sequences=3,  # Generates N sequences
         do_sample=True, 
         top_k=50
     )
@@ -25,10 +38,10 @@ def generate_shakespeare_text(model, tokenizer, prompt):
 
     return formatted_output
 
-# Load the model and tokenizer
+# Load the model and tokenizer using the cached functions
 model_path = "./tiny_shakespeare_gpt2"  # Update this path if needed
-model = GPT2LMHeadModel.from_pretrained(model_path)
-tokenizer = GPT2Tokenizer.from_pretrained(model_path)
+model = load_model(model_path)
+tokenizer = load_tokenizer(model_path)
 
 # Streamlit interface
 st.title('LLM Shakespeare Text Generator')
