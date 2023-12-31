@@ -1,5 +1,7 @@
 ### *Why*
 
+This one is for fun and learning, but serves very little practical purpose.
+
 Instead of becoming overreliant on pre-trained AI's from OpenAI, I wanted to know what it *feels* like to train up a large language transformer model.
 
 I thought that if I had a very basic grasp of what that was like, I could better understand why transformer LLM AI's do what they do.
